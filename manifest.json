@@ -1,21 +1,22 @@
 {
   "name": "OX-Bridge Learning Hub",
   "short_name": "OX-Bridge",
-  "description": "AI-powered learning platform for Nigerian students — WAEC, JAMB, Nursery to University",
-  "start_url": "/Past-waec-jamb-Q-A/index.html",
+  "description": "Nigeria's free AI-powered learning app for WAEC, JAMB, NECO and all school levels",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#0f1e3d",
   "theme_color": "#1d4ed8",
   "icons": [
     {
-      "src": "/Past-waec-jamb-Q-A/icon-192.png",
+      "src": "/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/Past-waec-jamb-Q-A/icon-512.png",
+      "src": "/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
@@ -23,12 +24,13 @@
   ],
   "categories": ["education"],
   "lang": "en-NG",
-  "scope": "/Past-waec-jamb-Q-A/",
   "screenshots": [
     {
-      "src": "/Past-waec-jamb-Q-A/icon-512.png",
+      "src": "/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "form_factor": "narrow"
     }
   ]
 }
+
