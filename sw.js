@@ -1,11 +1,10 @@
-const CACHE = 'oxbridge-v2';
-const BASE = '/Past-waec-jamb-Q-A';
+const CACHE = 'oxbridge-v3';
 const ASSETS = [
-  BASE + '/',
-  BASE + '/index.html',
-  BASE + '/manifest.json',
-  BASE + '/icon-192.png',
-  BASE + '/icon-512.png'
+  '/',
+  '/index.html',
+  '/manifest.json',
+  '/icon-192.png',
+  '/icon-512.png'
 ];
 
 self.addEventListener('install', e => {
@@ -32,8 +31,7 @@ self.addEventListener('fetch', e => {
         const clone = res.clone();
         caches.open(CACHE).then(c => c.put(e.request, clone));
         return res;
-      }).catch(() => caches.match(BASE + '/index.html'));
+      }).catch(() => caches.match('/index.html'));
     })
   );
 });
-  
