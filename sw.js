@@ -1,4 +1,4 @@
-const CACHE = 'oxbridge-v3';
+const CACHE = 'oxbridge-v4';
 const ASSETS = [
   '/',
   '/index.html',
@@ -35,3 +35,25 @@ self.addEventListener('fetch', e => {
     })
   );
 });
+
+// Fires even when the app/tab is completely closed - this is the actual
+// mechanism that makes a push notification appear on the device.
+self.addEventListener('push', event => {
+  const data = event.data ? event.data.json() : {};
+  event.waitUntil(
+    self.registration.showNotification(data.title || 'Ox-Bridge', {
+      body: data.body || 'You have something waiting for you today!',
+      icon: '/icon-192.png',
+      badge: '/icon-192.png',
+      data: { url: data.url || '/index.html' }
+    })
+  );
+});
+
+// Tapping the notification opens (or focuses) the app instead of just
+// dismissing it.
+self.addEventListener('notificationclick', event => {
+  event.notification.close();
+  event.waitUntil(clients.openWindow(event.notification.data.url));
+});
+                      
